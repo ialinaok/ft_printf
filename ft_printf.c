@@ -6,7 +6,7 @@
 /*   By: apielasz <apielasz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 10:50:22 by apielasz          #+#    #+#             */
-/*   Updated: 2022/03/10 13:30:42 by apielasz         ###   ########.fr       */
+/*   Updated: 2022/03/10 14:53:37 by apielasz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	put_format(const char **format, va_list *arg_list)
 	else if (**format == 's')
 		ret_count = ft_putstr_std_out(va_arg(*arg_list, char *));
 	else if (**format == 'd' || **format == 'i')
-		ret_count = ft_putnbr_std_out(va_arg(*arg_list, int));
+		ret_count = ft_putdec_std_out(va_arg(*arg_list, int));
 	else if (**format == '%')
 		ret_count = ft_putchar_std_out('%');
 	return (ret_count);

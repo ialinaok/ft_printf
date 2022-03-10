@@ -6,7 +6,7 @@
 #    By: apielasz <apielasz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 11:59:59 by apielasz          #+#    #+#              #
-#    Updated: 2022/03/10 13:12:02 by apielasz         ###   ########.fr        #
+#    Updated: 2022/03/10 15:52:05 by apielasz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ CFLAGS = -Wall -Wextra -Werror
 SRCS = main.c\
 	ft_printf.c\
 	ft_putchar_std_out.c\
-	ft_putstr_std_out.c
+	ft_putstr_std_out.c\
+	ft_putdec_std_out.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -37,7 +38,8 @@ fclean: clean
 
 re: fclean all
 
-runrm:
-	rm -f run
+add:
+	git add *.c Makefile libftprintf.h run.sh
+	git status
 
 .PHONY: all clean fclean re
