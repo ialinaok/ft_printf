@@ -6,7 +6,7 @@
 /*   By: apielasz <apielasz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:05:51 by apielasz          #+#    #+#             */
-/*   Updated: 2022/03/10 15:47:19 by apielasz         ###   ########.fr       */
+/*   Updated: 2022/03/11 18:06:55 by apielasz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(void)
 	char	arr[] = "time flies like an arrow";
 	int		d = 23;
 	int		i = 42;
+	int		hex = -0x80000000;
 
 	// check c conversion
 	printf("-------------------------\n");
@@ -65,5 +66,23 @@ int	main(void)
 	printf(".........................\n");
 	printf("my printf:\n");
 	ret_myprintf = ft_printf("d: %d\ni: %i", d, i);
+	printf("  returned: %d\n\n", ret_myprintf);
+	ret_original = printf("d given hex: %d\n", hex);
+	printf("  returned: %d\n", ret_original);
+	printf(".........................\n");
+	printf("my printf:\n");
+	ret_myprintf = ft_printf("d given hex: %d\n", hex);
 	printf("  returned: %d\n", ret_myprintf);
+
+	// check x and X conversion
+	printf("-------------------------\n");
+
+	printf("original:\n");
+	ret_original = printf("x: %x\n", hex);
+	printf("  returned: %d\n", ret_original);
+	printf(".........................\n");
+	printf("my printf:\n");
+	ret_myprintf = ft_printf("x: %x\n", hex);
+	printf("  returned: %d\n", ret_myprintf);
+	
 }
