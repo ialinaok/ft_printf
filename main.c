@@ -6,7 +6,7 @@
 /*   By: apielasz <apielasz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:05:51 by apielasz          #+#    #+#             */
-/*   Updated: 2022/03/11 20:46:04 by apielasz         ###   ########.fr       */
+/*   Updated: 2022/03/11 21:11:32 by apielasz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main(void)
 	int		i = 42;
 	int		hex = 0xabef1239;
 	unsigned int uint = 2324;
+	char *p = &c;
 
 	// check c conversion
 	printf("-------------------------\n");
@@ -106,5 +107,16 @@ int	main(void)
 	printf(".........................\n");
 	printf("my printf:\n");
 	ret_myprintf = ft_printf("u: %u\n", uint);
+	printf("  returned: %d\n", ret_myprintf);
+
+	// check p conversion
+	printf("-------------------------\n");
+	
+	printf("original:\n");
+	ret_original = printf("p: %p\n", (void *) p);
+	printf("  returned: %d\n", ret_original);
+	printf(".........................\n");
+	printf("my printf:\n");
+	ret_myprintf = ft_printf("p: %p\n", (void *) p);
 	printf("  returned: %d\n", ret_myprintf);
 }

@@ -6,7 +6,7 @@
 /*   By: apielasz <apielasz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 10:59:00 by apielasz          #+#    #+#             */
-/*   Updated: 2022/03/11 20:44:56 by apielasz         ###   ########.fr       */
+/*   Updated: 2022/03/11 21:30:31 by apielasz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int	ft_putdec_std_out(int n);
 int	ft_puthex_lower_std_out(unsigned int hex);
 int	ft_puthex_upper_std_out(unsigned int hex);
 int	ft_putuint_std_out(unsigned int uint);
+int	ft_putptr_std_out(void *ptr);
 
 #endif

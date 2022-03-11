@@ -6,7 +6,7 @@
 #    By: apielasz <apielasz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 11:59:59 by apielasz          #+#    #+#              #
-#    Updated: 2022/03/11 20:44:26 by apielasz         ###   ########.fr        #
+#    Updated: 2022/03/11 21:29:58 by apielasz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRCS = main.c\
 	ft_putdec_std_out.c\
 	ft_puthex_lower_std_out.c\
 	ft_puthex_upper_std_out.c\
-	ft_putuint_std_out.c
+	ft_putuint_std_out.c\
+	ft_putptr_std_out.c
 
 OBJS = $(SRCS:.c=.o)
 
