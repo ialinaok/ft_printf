@@ -6,7 +6,7 @@
 /*   By: apielasz <apielasz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 10:50:22 by apielasz          #+#    #+#             */
-/*   Updated: 2022/03/10 14:53:37 by apielasz         ###   ########.fr       */
+/*   Updated: 2022/03/11 20:44:37 by apielasz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,12 @@ static int	put_format(const char **format, va_list *arg_list)
 		ret_count = ft_putstr_std_out(va_arg(*arg_list, char *));
 	else if (**format == 'd' || **format == 'i')
 		ret_count = ft_putdec_std_out(va_arg(*arg_list, int));
+	else if (**format == 'u')
+		ret_count = ft_putuint_std_out(va_arg(*arg_list, unsigned int));
+	else if (**format == 'x')
+		ret_count = ft_puthex_lower_std_out(va_arg(*arg_list, unsigned int));
+	else if (**format == 'X')
+		ret_count = ft_puthex_upper_std_out(va_arg(*arg_list, unsigned int));
 	else if (**format == '%')
 		ret_count = ft_putchar_std_out('%');
 	return (ret_count);

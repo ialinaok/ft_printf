@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthex_std_out.c                                :+:      :+:    :+:   */
+/*   ft_puthex_lower_std_out.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apielasz <apielasz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 15:53:50 by apielasz          #+#    #+#             */
-/*   Updated: 2022/03/11 18:06:49 by apielasz         ###   ########.fr       */
+/*   Updated: 2022/03/11 20:25:08 by apielasz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_putdec_std_out(int hex)
+int	ft_puthex_lower_std_out(unsigned int hex)
 {
 	char	hexprint;
 	int		ret;
 
 	ret = 0;
-	if (hex < 0x0)
-	{
-		if (hex == -0x80000000)
-		{
-			write(1, "80000000", 8);
-			return (8);
-		}
-		hex *= -1;
-	}
 	if (hex >= 0x10)
-	{
-		ret += ft_puthex_std_out(hex/16);
-	}
-	hexprint = hex % 10 + 0x0;
+		ret += ft_puthex_lower_std_out(hex / 16);
+	hexprint = hex % 16;
+	if (hexprint <= 9)
+		hexprint += '0';
+	else
+		hexprint += 87;
 	write(1, &hexprint, 1);
 	return (1 + ret);
 }

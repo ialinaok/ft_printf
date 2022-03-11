@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_putuint_std_out.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apielasz <apielasz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 10:59:00 by apielasz          #+#    #+#             */
-/*   Updated: 2022/03/11 20:44:56 by apielasz         ###   ########.fr       */
+/*   Created: 2022/03/11 20:35:45 by apielasz          #+#    #+#             */
+/*   Updated: 2022/03/11 20:39:16 by apielasz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include "libftprintf.h"
 
-# include <stdarg.h>
-# include <unistd.h>
+int	ft_putuint_std_out(unsigned int uint)
+{
+	char	uintprint;
+	int		ret;
 
-int	ft_printf(const char *format, ...);
-int	ft_putchar_std_out(char c);
-int	ft_putstr_std_out(char *str);
-int	ft_putdec_std_out(int n);
-int	ft_puthex_lower_std_out(unsigned int hex);
-int	ft_puthex_upper_std_out(unsigned int hex);
-int	ft_putuint_std_out(unsigned int uint);
-
-#endif
+	ret = 0;
+	if (uint >= 10)
+		ret += ft_putuint_std_out(uint / 10);
+	uintprint = uint % 10 + '0';
+	write(1, &uintprint, 1);
+	return (1 + ret);
+}

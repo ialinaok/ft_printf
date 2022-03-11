@@ -6,7 +6,7 @@
 /*   By: apielasz <apielasz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:53:45 by apielasz          #+#    #+#             */
-/*   Updated: 2022/03/10 15:40:34 by apielasz         ###   ########.fr       */
+/*   Updated: 2022/03/11 20:38:35 by apielasz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,7 @@ int	ft_putdec_std_out(int n)
 		n *= -1;
 	}
 	if (n >= 10)
-	{
 		ret += ft_putdec_std_out(n / 10);
-	}
 	intprint = n % 10 + '0';
 	write(1, &intprint, 1);
 	return (1 + ret);

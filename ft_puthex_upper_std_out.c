@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_puthex_upper_std_out.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apielasz <apielasz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 10:59:00 by apielasz          #+#    #+#             */
-/*   Updated: 2022/03/11 20:44:56 by apielasz         ###   ########.fr       */
+/*   Created: 2022/03/11 19:51:36 by apielasz          #+#    #+#             */
+/*   Updated: 2022/03/11 20:25:14 by apielasz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include "libftprintf.h"
 
-# include <stdarg.h>
-# include <unistd.h>
+int	ft_puthex_upper_std_out(unsigned int hex)
+{
+	char	hexprint;
+	int		ret;
 
-int	ft_printf(const char *format, ...);
-int	ft_putchar_std_out(char c);
-int	ft_putstr_std_out(char *str);
-int	ft_putdec_std_out(int n);
-int	ft_puthex_lower_std_out(unsigned int hex);
-int	ft_puthex_upper_std_out(unsigned int hex);
-int	ft_putuint_std_out(unsigned int uint);
-
-#endif
+	ret = 0;
+	if (hex >= 0x10)
+		ret += ft_puthex_upper_std_out(hex / 16);
+	hexprint = hex % 16;
+	if (hexprint <= 9)
+		hexprint += '0';
+	else
+		hexprint += 55;
+	write(1, &hexprint, 1);
+	return (1 + ret);
+}
