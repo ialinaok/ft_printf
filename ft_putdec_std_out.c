@@ -6,7 +6,7 @@
 /*   By: apielasz <apielasz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:53:45 by apielasz          #+#    #+#             */
-/*   Updated: 2022/03/11 20:38:35 by apielasz         ###   ########.fr       */
+/*   Updated: 2022/03/12 11:36:14 by apielasz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@ int	ft_putdec_std_out(int n)
 		ret++;
 		if (n == -2147483648)
 		{
-			write(1, "2", 1);
-			ret += ft_putdec_std_out(147483648);
-			return (1 + ret);
+			write(1, "2147483648", 10);
+			return (ret + 10);
 		}
 		n *= -1;
 	}
