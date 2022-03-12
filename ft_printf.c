@@ -6,7 +6,7 @@
 /*   By: apielasz <apielasz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 10:50:22 by apielasz          #+#    #+#             */
-/*   Updated: 2022/03/12 11:14:26 by apielasz         ###   ########.fr       */
+/*   Updated: 2022/03/12 13:53:54 by apielasz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	ft_printf(const char *format, ...)
 		}
 		format++;
 	}
+	va_end(arg_list);
 	return (ret_count);
 }
 
