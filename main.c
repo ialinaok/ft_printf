@@ -6,7 +6,7 @@
 /*   By: apielasz <apielasz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:05:51 by apielasz          #+#    #+#             */
-/*   Updated: 2022/03/12 11:58:03 by apielasz         ###   ########.fr       */
+/*   Updated: 2022/03/12 13:03:51 by apielasz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,21 +97,12 @@ int	main(void)
 	ret_myprintf = ft_printf("d given hex: %d\n", hex);
 	printf("  returned: %d\n", ret_myprintf);
 	printf(":::::::::::::::::::::::::\n");
-	// ret_original = printf("smallest int: %d\n", -2147483647);
-	// printf("  returned: %d\n", ret_original);
-	// printf(".........................\n");
-	// printf("my printf:\n");
-	// ret_myprintf = ft_printf("smallest int: %d\n", -2147483648);
-	// printf("  returned: %d\n", ret_myprintf);
-	// printf(":::::::::::::::::::::::::\n");
-	int min = -2147483648;
-	ret_original = printf("smallest int: %i\n", min);
+	ret_original = printf("smallest int d: %d\nsmallest int i: %i\n", INT_MIN, INT_MIN);
 	printf("  returned: %d\n", ret_original);
 	printf(".........................\n");
 	printf("my printf:\n");
-	ret_myprintf = ft_printf("smallest int: %i\n", INT_MIN);
+	ret_myprintf = ft_printf("smallest int d: %d\nsmallest int i: %i\n", INT_MIN, INT_MIN);
 	printf("  returned: %d\n", ret_myprintf);
-
 
 	// check x conversion
 	printf("-------------------------\n");
